@@ -37,7 +37,7 @@ flask run
 The app will be available at:
 http://127.0.0.1:5000
 
-##The first time we log in, we need to enter a username and password. We have already manually added an admin with the username admin and password admin123. Later, you can change or update the admin from Users > Update.
+The first time we log in, we need to enter a username and password. We have already manually added an admin with the username admin and password admin123. Later, you can change or update the admin from Users > Update.
 
 ## **Documentation**
 Additional documentation (API endpoints and database schema) is available in:
