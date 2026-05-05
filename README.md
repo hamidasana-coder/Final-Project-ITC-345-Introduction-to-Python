@@ -43,8 +43,8 @@ python final project documentation/
 
 ## 👩‍💻 **Contributors**
 - Hamida Sana — Repository setup, README documentation, Testing, Additional python code 
-- Husna Sadat — 
-- Najma Yousofi —
+- Husna Sadat — frontend, API, hub, database schema, models
+- Najma Yousofi — APi, Hub, models
 
 ##✅ **Deliverables Checklist**
 
