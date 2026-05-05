@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library System</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="toast-container">
+    {% for message in get_flashed_messages() %}
+        <div class="toast">{{ message }}</div>
+    {% endfor %}
+    </div>
+
+    <div class ="container" >
+
+        
+        <div  >
+            <h2 class="title">Library Management System 📚</h2>
+            <div class="menu">
+                <a href="/books" class="menu-btn">📚 Books</a>
+                <a href="/users" class="menu-btn">👤 Users</a>
+                <a href="/report" class="menu-btn">📊 Reports</a>
+                <a href="/logout" class="menu-btn logout">🚪 Logout</a>
+            </div>
+
+        </div>
+        
+        <div class="home-image">
+            <img src="/static/w.jpg" >
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+

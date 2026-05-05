@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Borrow Book</title>
+{% endblock %}
+
+{% block body %}
+<div class="toast-container">
+    {% for message in get_flashed_messages() %}
+        <div class="toast">{{ message }}</div>
+    {% endfor %}
+</div>
+
+<div class="container">
+
+    <div class="item">
+        <h3>Assign Book 📚</h3>
+
+        <p>
+            <b>Title:</b> {{ book.title }} <br>
+            <b>Author:</b> {{ book.author }}
+        </p>
+
+        <form method="POST">
+            <label>Enter Username:</label>
+            
+            <select name="username" class="other-btn" style="background-color: aliceblue; padding:3px 18px;">
+                
+            {% for user in users %}
+                <option value="{{ user.username }}">{{ user.username }}</option>
+            {% endfor %}
+            </select>
+
+            <br>
+            <br>
+            <br>
+            <div class="btn-pos" >
+
+                <a href="/books"><button type ="button" class="other-btn">back</button></a>
+                <form method= "post">
+                    <button type="submit" class="other-btn">Borrow</button>
+
+                </form>
+            </div>
+
+        </form>
+
+        
+
+    </div>
+
+    
+
+</div>
+
+{% endblock %}

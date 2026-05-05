@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>report page</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2> records</h2>
+        <div >
+            <table border="1" style="width:100%; text-align:center; border-collapse: collapse;">
+                <tr>
+                    <th>User</th>
+                    <th>Book</th>
+                    <th>state</th>
+                </tr>
+
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.user.username }}</td>
+                    <td>{{ record.book.title }}</td>
+                    
+                    {% if record.book.available == true %}
+                        <td>returned</td>
+                    {% else %}
+                        <td>borrowed</td>
+                    {% endif %}
+
+                </tr>
+                <tr>
+
+                {% endfor %}
+            </table>
+            
+
+
+
+        </div>
+        <br>
+        <br>
+        <div class="btn-pos">
+
+            <a href="/home"><button type="button" class="other-btn">back</button></a>
+
+
+            {% if records.has_prev %}
+                <a href="{{ url_for('view_borrowed_books', page=records.prev_num) }}">
+                    <button class="other-btn">⬅ Previous</button>
+                </a>
+            {% endif %}
+
+            {% if records.has_next %}
+                <a href="{{ url_for('view_borrowed_books', page=records.next_num) }}">
+                    <button class="other-btn">Next ➡</button>
+                </a>
+            {% endif %}
+
+        </div>
+        
+
+        
+        
+    </div>
+    
+{% endblock %}

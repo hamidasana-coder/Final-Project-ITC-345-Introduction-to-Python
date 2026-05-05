@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title> edit books</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="toast-container">
+        {% for message in get_flashed_messages() %}
+            <div class="toast">{{ message }}</div>
+        {% endfor %}
+    </div>
+    <div class="container">
+        <h2>Edit Book </h2>
+        <div class= "form-container">
+            <form method="POST" style="display: inline;">
+
+                <input type="text" name="title" value="{{ book.title }}" required><br><br>
+                <input type="text" name="author" value="{{ book.author }}" required><br><br>
+                <input type="text" name="year" value="{{ book.year }}" required><br><br>
+                <input type="text" name="language" value="{{ book.language }}" required><br><br>
+                <div class="btn-pos">
+                    <a href="/books"><button class="other-btn">back</button></a>
+
+                    <button type="submit" class="other-btn">Update</button>
+                </div>
+                    
+
+            </form>
+            
+
+        </div>
+
+        
+    </div>
+{% endblock %}
+

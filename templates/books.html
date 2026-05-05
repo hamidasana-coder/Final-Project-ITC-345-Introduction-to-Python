@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Books list</title>
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="toast-container">
+    {% for message in get_flashed_messages() %}
+        <div class="toast">{{ message }}</div>
+    {% endfor %}
+    </div>
+
+    
+    <div class="container">
+        <div>
+            <h2>Search Books </h2>
+            <div >
+                <form action="/search_book" method="GET">
+                <input type="text" name="q" placeholder="Search..." required>
+                <button type="submit" style="background: rgba(239, 251, 74, 0.491);">Search</button>
+                </form>
+            </div>
+            
+        </div>
+        <div class = "item">
+            <h4>All Books 📚</h4>
+            
+            {% for book in books %}
+                <p>
+                    {{ book.title }}<br>
+                    Author: {{ book.author }}
+                    Year: {{ book.year }}
+                    Language: {{ book.language }}
+                    Status: {{ "Available" if book.available else "Not Available" }}
+                    
+                </p>
+                <p>
+                    <!-- REMOVE -->
+                    <form action="/delete_book/{{ book.id }}" method="POST" style="display:inline;">
+                        <button type="submit">Remove</button>
+                    </form>
+                    <!-- EDIT -->
+                    <a href="/edit_book/{{ book.id }}">
+                    <button type="button">Edit</button>
+
+                    <!-- borrow -->
+                    <a href="/borrow_books/{{ book.id }}">
+                        <button type="button">Borrow</button>
+                    </a>
+                    <form action="/return_book/{{ book.id }}" method="POST" style="display:inline;">
+                        <button type="submit">Return</button>
+                    </form>
+                    
+
+                    
+                </p>
+
+            {% endfor %}
+
+               
+            
+        </div>
+        <br>
+        <br>
+        <div  class="btn-pos">
+            
+            <a href="/home"> <button type="button" class="other-btn">back</button></a>
+            <a href="/add_book"  ><button type="button" class="other-btn">add a new book</button></a>
+
+            {% if books.has_prev %}
+            <a href="{{ url_for('books', page=books.prev_num) }}">
+                <button class="other-btn">⬅ Previous</button>
+            </a>
+            {% endif %}
+
+            {% if books.has_next %}
+                <a href="{{ url_for('books', page=books.next_num) }}">
+                    <button class="other-btn">Next ➡</button>
+                </a>
+            {% endif %}
+        
+        </div>
+            
+    </div>
+
+
+{% endblock %}
+    
+    

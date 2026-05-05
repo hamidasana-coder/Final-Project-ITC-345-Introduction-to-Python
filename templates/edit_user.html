@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>edit user</title>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="toast-container">
+    {% for message in get_flashed_messages() %}
+        <div class="toast">{{ message }}</div>
+    {% endfor %}
+</div>
+<div class="container">
+        <h2>Edit user </h2>
+        <div class= "form-container">
+            <form method="POST" style="display: inline;">
+
+                <input type="text" name="username" value="{{ user.username }}" required><br><br>
+                <input type="password" name="password" value="{{ user.password }}" required><br><br>
+                <input type="email" name="email" value="{{ user.email }}" required><br><br>
+                <input type="text" name="role" value="{{ user.role }}" required><br><br>
+                <a href="/users"><button class="other-btn">back</button></a>
+
+                <button type="submit" class="other-btn">Update</button>
+
+
+            
+               
+
+            </form>
+
+            
+        </div>
+
+        
+    </div>
+{% endblock %}

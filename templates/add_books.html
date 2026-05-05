@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Add New Book</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="toast-container">
+    {% for message in get_flashed_messages() %}
+        <div class="toast">{{ message }}</div>
+    {% endfor %}
+</div>
+
+<div class="container">
+
+    <h2>Add Book</h2>
+    <div class="form-container">
+        <form action="/add_book" method="POST" style="display: inline;">
+        <input type="text" name="title" placeholder="Title" required><br><br>
+        <input type="text" name="author" placeholder="Author" required><br><br>
+        <input type="text" name="year" placeholder="Year" required><br><br>
+        <input type="text" name="language" placeholder="Language" required><br><br>
+            <div class ="btn-pos">
+                <button type="button" class="other-btn"onclick="window.location.href='/books'"> Back</button>
+
+                <button type="submit" class="other-btn">Add Book</button>
+            </div>
+            
+        </form>
+    </div>
+
+    
+</div>
+
+{% endblock %}
+    
+

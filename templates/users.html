@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Users</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="toast-container">
+        {% for message in get_flashed_messages() %}
+            <div class="toast">{{ message }}</div>
+        {% endfor %}
+    </div>
+    <div class="container">
+        <h2>All Users</h2>
+        <div class = "item">
+        
+            {% for user in users %}
+
+                <p> id: {{user.id}}<br>
+                    username: {{ user.username }}<br>
+                    email: {{user.email}}
+
+
+                </p>
+                <p>
+                    <!-- REMOVE -->
+                    <form action="/delete_user/{{ user.id }}" method="POST" >
+                        <button type="submit" >Remove</button>
+
+                        <!-- EDIT -->
+                        <a href="/edit_user/{{ user.id }}">
+                            <button type="button" >Edit</button>
+                        </a>
+                    </form> 
+                </p>
+                
+            
+            {% endfor %}
+
+        </div>  
+        <br>
+        
+        
+        <!-- ADD  or go to home page-->
+        <div  class="btn-pos">
+            
+            <a href="/home"> <button type="button" class="other-btn">back</button></a>
+            <a href="/add_user"  ><button type="button" class="other-btn">add a new user</button></a>
+
+            {% if users.has_prev %}
+            <a href="{{ url_for('users', page=users.prev_num) }}">
+                <button class="other-btn">⬅ Previous</button>
+            </a>
+            {% endif %}
+
+            {% if users.has_next %}
+                <a href="{{ url_for('users', page=users.next_num) }}">
+                    <button class="other-btn">Next ➡</button>
+                </a>
+            {% endif %}
+        
+        </div>
+
+
+
+        <p>    
+            
+        </p>
+                
+
+    </div>
+
+{% endblock %}
