@@ -42,9 +42,9 @@ Additional documentation (API endpoints and database schema) is available in:
 python final project documentation/
 
 ## 👩‍💻 **Contributors**
-Hamida Sana — Repository setup, README documentation, Testing, Additional python code 
-Husna Sadat
-Najma Yousofi
+- Hamida Sana — Repository setup, README documentation, Testing, Additional python code 
+- Husna Sadat — 
+- Najma Yousofi —
 
 ##✅ **Deliverables Checklist**
 
