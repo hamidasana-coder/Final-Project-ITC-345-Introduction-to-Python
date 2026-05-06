@@ -43,6 +43,8 @@ The first time we log in, we need to enter a username and password. We have alre
 Additional documentation (API endpoints and database schema) is available in:
 python final project documentation/
 
+Representation recording: https://drive.google.com/file/d/1QpYvqEmreIEzTGEnKlBv6aZmYbsUjF08/view?usp=sharing
+
 ## 👩‍💻 **Contributors**
 - Hamida Sana — Repository setup, README documentation, Testing, Additional python code 
 - Husna Sadat — frontend, API, hub, database schema, models
