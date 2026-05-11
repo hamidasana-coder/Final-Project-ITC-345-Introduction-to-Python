@@ -48,7 +48,7 @@ Representation recording: https://drive.google.com/file/d/1QpYvqEmreIEzTGEnKlBv6
 ## 👩‍💻 **Contributors**
 - Hamida Sana — Repository setup, README documentation, Testing, Additional python code 
 - Husna Sadat — frontend, API, hub, database schema, models
-- Najma Yousofi — APi, Hub, models
+- Najma Yousofi — Api ,Hub,Models 
 
 ##✅ **Deliverables Checklist**
 
